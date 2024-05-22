@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define the character encoding and viewport settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Define a stylesheet to style the HTML elements -->
+    <style>
+        /* Set the font family for the entire page */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        /* Center the form on the page and set its width */
+        form {
+            margin: 0 auto;
+            width: 300px;
+        }
+        /* Position the submit button at the top of the form */
+        input[type="submit"] {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Create a form element with an ID of "orderForm" -->
+    <form id="orderForm">
+        <!-- Add a heading to the form -->
+        <h2>Computer Components Order Form</h2>
+        <!-- Add a label and input field for the component type -->
+        <label for="component">Component:</label><br>
+            <input type="text" id="component" name="component"><br>
+        <!-- Add a label and input field for the quantity -->
+        <label for="quantity">Quantity:</label><br>
+            <input type="number" id="quantity" name="quantity" min="1" max="100"><br>
+        <!-- Add a submit button to submit the form -->
+        <input type="submit" value="Submit">
+    </form>
+    <!-- Add a JavaScript event listener to the form to handle submissions -->
+    <script>
+        // Get the form element by its ID
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            // Get the values of the component and quantity input fields
+            var component = document.getElementById('component').value;
+            var quantity = document.getElementById('quantity').value;
+            // Display an alert message with the order details
+            alert('You have ordered ' + quantity + ' ' + component + '(s).');
+        });
+    </script>
+</body>
+</html>
